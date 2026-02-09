@@ -1,0 +1,15 @@
+name: Build Android APK
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build Android APK with Bubblewrap
+        uses: bubblewrap/android-action@v1
+        with:
+          swUrl: 'https://nirajverse07.github.io/Modern-Calculator-/'
+          manifestPath: 'manifest.json'
